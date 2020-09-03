@@ -22,3 +22,40 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+# テーブル設計
+
+## users テーブル
+
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| nickname | string | null: false |
+| email    | string | null: false |
+| password | string | null: false |
+
+### Association
+
+has_many :musics
+
+## musics テーブル
+
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| user           | references | null: false, foreign_key: true |
+| name           | string     | null: false                    |
+| genre_id       | integer    | null: false                    |
+| representative | string     | null: false                    |
+| mail           | string     | null: false                    |
+| prefecture_id  | integer    | null: false                    |
+| post_code      | string     | null: false                    |
+| city           | string     | null: false                    |
+| house_number   | string     | null: false                    |
+| building_name  | string     |                                |
+| phone_number   | string     | null: false                    |
+| station        | string     | null: false                    |
+| walk           | integer    | null: false                    |
+
+### Association
+
+belongs_to :user
