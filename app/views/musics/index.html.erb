@@ -4,9 +4,9 @@
       <%= link_to "OTOSUTA", "/" ,class:"no-underline"%>
     </div>
     <div class="nav">
-      <ul class="lists">
-        <li>ログイン</li>
-        <li>新規登録</li>
+      <ul class="user_nav grid-6">
+        <%= link_to "ログイン", new_user_session_path, class: "post" %>
+        <%= link_to "新規登録", new_user_registration_path, class: "post" %>
       </ul>
     </div>
   </div>
