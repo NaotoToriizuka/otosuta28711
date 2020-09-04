@@ -44,6 +44,7 @@ has_many :musics
 | -------------- | ---------- | ------------------------------ |
 | user           | references | null: false, foreign_key: true |
 | name           | string     | null: false                    |
+| content        | text       |                                |
 | genre_id       | integer    | null: false                    |
 | representative | string     | null: false                    |
 | mail           | string     | null: false                    |
@@ -55,6 +56,11 @@ has_many :musics
 | phone_number   | string     | null: false                    |
 | station        | string     | null: false                    |
 | walk           | integer    | null: false                    |
+| hour           | string     |                                |
+| holiday        | string     |                                |
+| fee            | text       | null: false                    |
+| url            | text       |                                |
+| remarks        | text       |                                |
 
 ### Association
 
