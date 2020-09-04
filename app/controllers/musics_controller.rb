@@ -8,6 +8,6 @@ class MusicsController < ApplicationController
   end
 
   def create
-    @item = Music.create 
+    @music = Music.create 
   end
 end
