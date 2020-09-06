@@ -65,3 +65,10 @@ has_many :musics
 ### Association
 
 belongs_to :user
+
+## music_genre テーブル
+
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| music_id       | references | null: false, foreign_key: true |
+| genre_id       | string     | null: false                    |

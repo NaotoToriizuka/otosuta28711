@@ -1,7 +1,7 @@
 class Music < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :user
-  belongs_to_active_hash :genre
+  # belongs_to_active_hash :genre
   belongs_to_active_hash :prefecture
 
   with_options presence: true do

@@ -47,7 +47,7 @@
           <span class="indispensable">必須</span>
         </div>
         <%# 後ほどcollection_selectではなく他の選択機能を実装する %>
-        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"music-genre"}) %>
+        <%= f.collection_check_boxes(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"music-genre"}) %>
       </div>
     <%# ジャンル %>
 
