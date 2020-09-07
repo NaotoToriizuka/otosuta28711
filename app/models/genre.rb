@@ -1,7 +1,6 @@
 class Genre < ActiveHash::Base
-  has_many :music_genre
-  
   self.data = [
+    {id: 0, name: '選択してください'},
     {id: 1, name: 'エレキギター'}, {id: 2, name: 'アコースティックギター'},
     {id: 3, name: 'クラシックギター'}, {id: 4, name: 'ベース'}, {id: 5, name: 'ドラム'},
     {id: 6, name: 'パーカッション'},{id: 7, name: 'ボーカル'}, {id: 8, name: '声楽'},

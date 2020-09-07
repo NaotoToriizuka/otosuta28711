@@ -44,11 +44,19 @@
       <div class="form">
         <div class="weight-bold-text">
           ジャンル
-          <span class="indispensable">必須</span>
+          <span class="indispensable">必須(複数可)</span>
         </div>
         <%# 後ほどcollection_selectではなく他の選択機能を実装する %>
-        <%= f.collection_check_boxes(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"music-genre"}) %>
+         <%# <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"genre"}) %>
+        <%= f.collection_select(:genre_id1, Genre.all, :id, :name, {} ,{class:"select-box", id:"genre"}) %>
       </div>
+      <div class="form">
+        <%= f.collection_select(:genre_id2, Genre.all, :id, :name, {} ,{class:"select-box", id:"genre"}) %>
+      </div>
+      <div class="form">
+        <%= f.collection_select(:genre_id3, Genre.all, :id, :name, {} ,{class:"select-box", id:"genre"}) %>
+      </div>
+
     <%# ジャンル %>
 
     <%# 住所 %>
@@ -57,7 +65,7 @@
           郵便番号
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_field :post_code, class:"input-default", id:"post_code", placeholder: "例)123-4567", maxlength:"8" %>
+        <%= f.text_field :post_code, class:"input-default", id:"post-code", placeholder: "例)123-4567", maxlength:"8" %>
         <div class="weight-bold-text">
           都道府県
           <span class="indispensable">必須</span>
@@ -105,10 +113,10 @@
       </div>
       <%= f.text_field :phone_number, class:"input-default", id:"phone-number", placeholder:"例）09012345678",maxlength:"11" %>
       <div class="weight-bold-text">
-        email
+        mail
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可" %>
+      <%= f.text_field :mail, class:"input-default", id:"mail", placeholder:"PC・携帯どちらでも可" %>
     </div>
     <%# 連絡先 %>
 
@@ -124,6 +132,12 @@
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_field :hour, class:"input-default", id:"hour", placeholder:"例）12時00分〜21時00分" %>
+    </div>
+    <div class="weight-bold-text">
+        定休日
+        <span class="indispensable">任意</span>
+      </div>
+      <%= f.text_field :holiday, class:"input-default", id:"holiday", placeholder:"例）毎週火曜日" %>
     </div>
     <%# 代表者、営業時間、定休日 %>
 
