@@ -13,7 +13,7 @@ FactoryBot.define do
     city              {'横浜市緑区'}
     house_number      {'青山1-1-1'}
     building_name     {'otoutaビル101'}
-    hone_number       {'08012345678'}
+    phone_number       {'08012345678'}
     station           {'横浜駅'}
     walk              {'10'}
     hour              {'12時〜20時'}

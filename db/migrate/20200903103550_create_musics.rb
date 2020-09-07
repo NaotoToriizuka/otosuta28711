@@ -8,7 +8,7 @@ class CreateMusics < ActiveRecord::Migration[6.0]
       t.integer       :genre_id2
       t.integer       :genre_id3
       t.string        :representative,  null: false
-      t.string        :mail,            null: false
+      t.string        :mail,            null: false, unique: true
       t.integer       :prefecture_id,   null: false
       t.string        :post_code,       null: false
       t.string        :city,            null: false
