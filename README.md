@@ -45,9 +45,11 @@ has_many :musics
 | user           | references | null: false, foreign_key: true |
 | name           | string     | null: false                    |
 | content        | text       |                                |
-| genre_id       | integer    | null: false                    |
+| genre_id1      | integer    | null: false                    |
+| genre_id2      | integer    |                                |
+| genre_id3      | integer    |                                |
 | representative | string     | null: false                    |
-| mail           | string     | null: false                    |
+| mail           | string     | null: false, unique: true      |
 | prefecture_id  | integer    | null: false                    |
 | post_code      | string     | null: false                    |
 | city           | string     | null: false                    |
@@ -65,10 +67,3 @@ has_many :musics
 ### Association
 
 belongs_to :user
-
-## music_genre テーブル
-
-| Column         | Type       | Options                        |
-| -------------- | ---------- | ------------------------------ |
-| music_id       | references | null: false, foreign_key: true |
-| genre_id       | string     | null: false                    |

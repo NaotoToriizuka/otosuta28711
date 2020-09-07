@@ -1,6 +1,7 @@
 class MusicsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
   def index
+    @music = Music.all
   end
 
   def new

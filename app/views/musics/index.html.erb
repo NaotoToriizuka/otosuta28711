@@ -16,6 +16,9 @@
       </div>
     <% end %>
     </div>
+    <div class="room-index">
+      <%= link_to "教室一覧", music_lists_path(@music.all),method: :get, class: "lists"%>
+    </div>
   </div>
   
   <div class="search-form">
