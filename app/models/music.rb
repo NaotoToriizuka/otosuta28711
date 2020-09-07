@@ -3,6 +3,7 @@ class Music < ApplicationRecord
   belongs_to :user
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :genre
+  has_one_attached :image
 
   with_options presence: true do
     validates :name
@@ -16,6 +17,6 @@ class Music < ApplicationRecord
     validates :phone_number, numericality: { with: /\A\d{10}$|^\d{11}\z/, message: "Input correctly"}
     validates :station
     validates :walk, numericality: {with: /\A[0-9０-９]+\z/, message: ""}
-    validates :fee, numericality: {with: /\A[0-9]+\z/, message: "Half-width number"}
+    validates :fee
   end
 end
