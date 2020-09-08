@@ -1,6 +1,7 @@
 class MusicsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :room]
   def index
+    @music = Music.all
   end
 
   def new
@@ -15,6 +16,14 @@ class MusicsController < ApplicationController
     else
       render "new"
     end
+
+    # def room
+    #   @musics = Music.where(name)
+    # end
+
+    def show
+      @music = Music.find(params[:id])
+    end
   end
 
   private
@@ -28,5 +37,4 @@ class MusicsController < ApplicationController
       redirect_to new_user_session_path
     end
   end
-
 end
