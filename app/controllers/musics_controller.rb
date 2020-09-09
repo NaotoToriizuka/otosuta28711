@@ -1,5 +1,5 @@
 class MusicsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show, :room]
+  before_action :move_to_index, except: [:index, :room]
   def index
     @music = Music.all
   end
@@ -16,14 +16,6 @@ class MusicsController < ApplicationController
     else
       render :new
     end
-
-    # def room
-    #   @musics = Music.where(name)
-    # end
-  end
-
-  def show
-    @music = Music.find(params[:id])
   end
 
   def update
@@ -34,6 +26,16 @@ class MusicsController < ApplicationController
       redirect_to root_path
     else
       render template: "rooms/edit"
+    end
+  end
+
+  def destroy
+    @music = Music.find(params[:id])
+    if @music.valid?
+      @music.destroy
+      redirect_to root_path
+    else
+      render template: "rooms/show"
     end
   end
 

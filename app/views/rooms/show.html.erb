@@ -122,6 +122,7 @@
 
 <% if user_signed_in? && current_user.id == @music.user_id %>
 <%= link_to '教室情報の編集', edit_room_path(@music.id), method: :get, class: "room-edit-btn" %>
+<%= link_to '教室情報の削除', music_path(@music.id), method: :delete, class: "room-destroy-btn" %>
 <% end %>
 
 <div class="room-btn-contents">
