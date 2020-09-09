@@ -119,6 +119,11 @@
   </div>
 </div>
 <%# 教室の概要 %>
+
+<% if user_signed_in? && current_user.id == @music.user_id %>
+<%= link_to '教室情報の編集', edit_room_path(@music.id), method: :get, class: "room-edit-btn" %>
+<% end %>
+
 <div class="room-btn-contents">
   <%= link_to 'もどる', rooms_path, class:"back-btn"%>
 </div>
