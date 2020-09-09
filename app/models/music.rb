@@ -2,12 +2,14 @@ class Music < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :user
   belongs_to_active_hash :prefecture
-  belongs_to_active_hash :genre
+  belongs_to_active_hash :genre1
+  belongs_to_active_hash :genre2
+  belongs_to_active_hash :genre3
   has_one_attached :image
 
   with_options presence: true do
     validates :name
-    validates :genre_id1, numericality: {other_than: 0, message: "Select"}
+    validates :genre1_id, numericality: {other_than: 0, message: "Select"}
     validates :representative
     validates :mail, format: {with: /\A\S+@\S+\.\S+\z/, message: ""}
     validates :prefecture_id, numericality: {other_than: 0, message: "Select"}

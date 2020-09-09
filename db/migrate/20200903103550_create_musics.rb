@@ -4,9 +4,9 @@ class CreateMusics < ActiveRecord::Migration[6.0]
       t.references    :user,            null: false, foreign_key: true
       t.string        :name,            null: false
       t.text          :content
-      t.integer       :genre_id1,       null: false
-      t.integer       :genre_id2
-      t.integer       :genre_id3
+      t.integer       :genre1_id,       null: false
+      t.integer       :genre2_id
+      t.integer       :genre3_id
       t.string        :representative,  null: false
       t.string        :mail,            null: false, unique: true
       t.integer       :prefecture_id,   null: false

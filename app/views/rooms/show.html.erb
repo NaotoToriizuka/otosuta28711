@@ -1,0 +1,124 @@
+<%# 教室の概要 %>
+<div class="room-show">
+  <div class="room-box">
+    <%# 教室名 %>
+    <h2 class="name">
+      <%= @music.name %>
+    </h2>
+    <%# 教室名 %>
+    <%# 教室画像 %>
+    <div class="room-img-content">
+      <% if @music.image.present? %>
+      <%= image_tag @music.image, class:"room-box-img" %>
+      <% end %>
+    </div>
+    <%# 教室画像 %>
+    <%# 教室説明 %>
+    <div class="content">
+      <%= @music.content %>
+    </div>
+    <%# 教室説明 %>
+    <%# ジャンル説明 %>
+    <div class="genres">
+      <% if @music.genre2.id == 0 && @music.genre3.id == 0 %>
+        <%= @music.genre1.name %> 
+      <% elsif @music.genre2.id == 0 && @music.genre3.id != 0 %> 
+        <%= @music.genre1.name %>  
+        <%= @music.genre3.name %>  
+     <% elsif @music.genre3.id == 0 %> 
+        <%= @music.genre1.name %>  
+        <%= @music.genre2.name %>  
+      <% else %>
+        <%= @music.genre1.name %>
+        <%= @music.genre2.name %>
+        <%= @music.genre3.name %>
+      <% end %>
+    </div>
+    <%# ジャンル説明 %>
+
+    <%# 住所 %>
+    <%# 郵便番号 %>
+    <div class="post-code">
+      <%= @music.post_code %>
+    </div>
+    <%# 郵便番号 %>
+    <%# 都道府県 %>
+    <div class="prefecture">
+      <%= @music.prefecture.name %>
+    </div>
+    <%# 都道府県 %>
+    <%# 市町村 %>
+    <div class="city">
+      <%= @music.city %>
+    </div>
+    <%# 市町村 %>
+    <%# 番地 %>
+    <div class="house-number">
+      <%= @music.house_number %>
+    </div>
+    <%# 番地 %>
+    <%# 建物名 %>
+    <div class="building-name">
+      <%= @music.building_name %>
+    </div>
+    <%# 建物名 %>
+    <%# 住所 %>
+    <%# 最寄り駅 %>
+    <div class="station">
+      <%= @music.station %>
+    </div>
+    <%# 最寄り駅 %>
+    <%# 徒歩 %>
+    <div class="walk">
+    <P>駅から徒歩<%= @music.walk %>分</p>
+    </div>
+    <%# 徒歩 %>
+
+    <%# 電話番号 %>
+    <div class="phone-number">
+      <%= @music.phone_number %>
+    </div>
+    <%# 電話番号 %>
+    <%# メール %>
+    <div class="mail">
+      <%= @music.mail %>
+    </div>
+    <%# メール %>
+    <%# 代表者 %>
+    <div class="representative">
+      <%= @music.representative %>
+    </div>
+    <%# 代表者 %>
+    <%# 営業時間 %>
+    <div class="hour">
+      <%= @music.hour %>
+    </div>
+    <%# 営業時間 %>
+    <%# 定休日 %>
+    <div class="holiday">
+      <%= @music.holiday %>
+    </div>
+    <%# 定休日 %>
+
+    <%# URL %>
+    <div class="URL">
+      <%= link_to @music.url, @music.url %>
+    </div>
+    <%# URL %>
+    <%# 授業料 %>
+    <div class="fee">
+      <%= @music.fee %>
+    </div>
+    <%# 授業料 %>
+    <%# 備考欄 %>
+    <div class="remarks">
+      <%= @music.remarks %>
+    </div>
+    <%# 備考欄 %>
+
+  </div>
+</div>
+<%# 教室の概要 %>
+<div class="room-btn-contents">
+  <%= link_to 'もどる', rooms_path, class:"back-btn"%>
+</div>

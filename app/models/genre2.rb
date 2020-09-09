@@ -1,4 +1,4 @@
-class Genre < ActiveHash::Base
+class Genre2 < ActiveHash::Base
   self.data = [
     {id: 0, name: '選択してください'},
     {id: 1, name: 'エレキギター'}, {id: 2, name: 'アコースティックギター'},
