@@ -9,17 +9,17 @@ class Music < ApplicationRecord
 
   with_options presence: true do
     validates :name
-    # validates :genre1, numericality: {other_than: 0, message: "Select"}
+    validates :genre1_id, numericality: {other_than: 0, message: "Select"}
     validates :representative
-    # validates :mail, format: {with: /\A\S+@\S+\.\S+\z/, message: ""}
+    validates :mail, format: {with: /\A\S+@\S+\.\S+\z/, message: ""}
     validates :prefecture_id, numericality: {other_than: 0, message: "Select"}
-    # validates :post_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: "Input correctly"}
+    validates :post_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: "Input correctly"}
     validates :city
     validates :house_number
-    # validates :phone_number, numericality: { with: /\A\d{10}$|^\d{11}\z/, message: "Input correctly"}
+    validates :phone_number, numericality: { with: /\A\d{10}$|^\d{11}\z/, message: "Input correctly"}
     validates :station
-    # validates :walk, numericality: {with: /\A[0-9０-９]+\z/, message: "Full-width or half-width numbers"}
+    validates :walk, numericality: {with: /\A[0-9０-９]+\z/, message: "Full-width or half-width numbers"}
     validates :fee
   end
-  # validates :mail, uniqueness: true
+  validates :mail, uniqueness: true
 end

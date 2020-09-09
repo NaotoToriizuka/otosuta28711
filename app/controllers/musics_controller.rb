@@ -10,7 +10,6 @@ class MusicsController < ApplicationController
 
   def create
     @music = Music.create(music_params)
-    binding.pry
     if @music.valid?
       @music.save
       redirect_to root_path
