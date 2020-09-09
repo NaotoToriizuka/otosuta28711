@@ -20,14 +20,14 @@
     <%# 教室説明 %>
     <%# ジャンル説明 %>
     <div class="genres">
-      <% if @music.genre2 == nil || @music.genre3 == nil %>
+      <% if @music.genre2.id == 0 || @music.genre3.id == 0%>
         <%= @music.genre1.name %> 
-      <% elsif @music.genre2 == nil || @music.genre3 == true %>
-        <%= @music.genre1.name %>
-        <%= @music.genre3.name %>
-      <% elsif @music.genre3 == nil %>
-        <%= @music.genre1.name %>
-        <%= @music.genre2.name %>
+      <% elsif @music.genre2.id == 0 || @music.genre3 == true %> 
+        <%= @music.genre1.name %>  
+        <%= @music.genre3.name %>  
+     <% elsif @music.genre3.id == 0 %> 
+        <%= @music.genre1.name %>  
+        <%= @music.genre2.name %>  
       <% else %>
         <%= @music.genre1.name %>
         <%= @music.genre2.name %>
