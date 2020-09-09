@@ -5,6 +5,10 @@ class RoomsController < ApplicationController
 
   def show
     @music = Music.find(params[:id])
-
   end
+
+  def edit
+    @music = Music.find(params[:id])
+  end
+
 end
