@@ -14,15 +14,26 @@ class MusicsController < ApplicationController
       @music.save
       redirect_to root_path
     else
-      render "new"
+      render :new
     end
 
     # def room
     #   @musics = Music.where(name)
     # end
+  end
 
-    def show
-      @music = Music.find(params[:id])
+  def show
+    @music = Music.find(params[:id])
+  end
+
+  def update
+    @music = Music.find(params[:id])
+    @music.update(music_params)
+    if @music.valid?
+      @music.update(music_params)
+      redirect_to root_path
+    else
+      render template: "rooms/edit"
     end
   end
 

@@ -10,4 +10,5 @@ class RoomsController < ApplicationController
   def edit
     @music = Music.find(params[:id])
   end
+
 end
