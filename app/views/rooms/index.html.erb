@@ -1,7 +1,9 @@
 <h1>教室一覧</h1>
 <% @musics.each do |music| %>
   <li class="list">
-    <%= link_to music.name, root_path %>
+    <%= link_to music.name, room_path(music.id) %>
     <%= music.prefecture.name %>
+    <%# <%= music.genre_id1%>
+    <%# <%= music.genre_id2 %>
   </li>
 <% end %>
