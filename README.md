@@ -45,9 +45,9 @@ has_many :musics
 | user           | references | null: false, foreign_key: true |
 | name           | string     | null: false                    |
 | content        | text       |                                |
-| genre_id1      | integer    | null: false                    |
-| genre_id2      | integer    |                                |
-| genre_id3      | integer    |                                |
+| genre1_id1     | integer    | null: false                    |
+| genre2_id2     | integer    |                                |
+| genre3_id      | integer    |                                |
 | representative | string     | null: false                    |
 | mail           | string     | null: false, unique: true      |
 | prefecture_id  | integer    | null: false                    |
