@@ -45,9 +45,6 @@ has_many :musics
 | user           | references | null: false, foreign_key: true |
 | name           | string     | null: false                    |
 | content        | text       |                                |
-| genre1_id1     | integer    | null: false                    |
-| genre2_id2     | integer    |                                |
-| genre3_id      | integer    |                                |
 | representative | string     | null: false                    |
 | mail           | string     | null: false, unique: true      |
 | prefecture_id  | integer    | null: false                    |
@@ -67,3 +64,30 @@ has_many :musics
 ### Association
 
 belongs_to :user
+has_many :music_genres
+has_many :genres, through: :music_genres ,dependent: :destroy
+belongs_to_active_hash :prefecture
+has_one_attached :image
+
+## genres テーブル
+
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| name           | string     | null: false                    |
+
+### Association
+
+has_many :music_genres
+has_many :musics, through: :music_genres
+
+## music_genres テーブル
+
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| music          | references | null: false, foreign_key: true |
+| genre          | references | null: false, foreign_key: true |
+
+### Association
+
+belongs_to :music
+belongs_to :genre
