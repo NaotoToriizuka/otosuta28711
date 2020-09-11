@@ -21,6 +21,20 @@
     </div>
   </div>
   
+ 
+  <%= search_form_for @q, url: musics_search_path do |f| %>
+    <%= f.label :name, "keyword" %>
+    <%= f.search_field :name_cont_any %>
+    <%= f.submit "検索" %>
+
+    <%= f.label :prefecture_id_eq, '都道府県' %>
+    <%= f.collection_select :prefecture_id_eq, @prefecture, :id, :name, include_blank: '指定なし' %>
+    <br>
+    <%= f.submit '検索' %>
+    <br>
+  <% end %>
+
+
   <div class="search-form">
     <div class="form-input">
       <input class="search" placeholder="キーワードから探す">

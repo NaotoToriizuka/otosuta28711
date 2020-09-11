@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :genre2 do
+  factory :music_genre do
     
   end
 end

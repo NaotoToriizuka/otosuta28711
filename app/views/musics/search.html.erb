@@ -1,0 +1,14 @@
+<h1>検索結果</h1>
+<% if @musics.length !=0 %>
+  <% @musics.each do |musics| %>
+    <td>
+    <br>
+    <li>
+      <%= link_to musics.name, room_path(musics.id) %>
+    </li>
+  <% end %>
+<% else %>
+  該当する教室はありません
+<% end %>
+<br>
+<%= link_to 'トップページへ戻る', root_path %>
