@@ -45,9 +45,9 @@ class MusicsController < ApplicationController
   end
 
   def destroy
-    @music = Music.find(params[:id])
-    if @music.valid?
-      @music.destroy
+    music = Music.find(params[:id])
+    if music.valid?
+      music.destroy
       redirect_to root_path
     else
       render template: "rooms/show"

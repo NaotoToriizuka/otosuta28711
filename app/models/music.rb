@@ -2,7 +2,7 @@ class Music < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :user
   has_many :music_genres
-  has_many :genres, through: :music_genres
+  has_many :genres, through: :music_genres ,dependent: :destroy
   belongs_to_active_hash :prefecture
   has_one_attached :image
 
