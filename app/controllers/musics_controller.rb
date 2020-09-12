@@ -1,21 +1,20 @@
 class MusicsController < ApplicationController
   before_action :move_to_index, except: [:index, :room, :seach]
-  before_action :search_music, only: [:index, :search]
+  # before_action :search_music, only: [:index, :search]
 
   def index
-    @music = Music.all
+    # @music = Music.all
+    @q = Music.ransack(params[:q])
+    @musics = @q.result(distinct: true)
+    @prefecture = Prefecture.where.not id: 0
     @genre = Genre.all
-    @prefecture = Prefecture.all
-    set_product_column
-
   end
 
   def search
-    # @q = Music.search(search_params)
-    @music = Music.all
-    @genre = Genre.all
+    # @q = Music.ransack(params[:q])
+    @q = Music.search(search_params)
+    @musics = @q.result(distinct: true)
 
-    # @results = @p.result.includes(:genre1)
   end
 
   def new
@@ -59,20 +58,21 @@ class MusicsController < ApplicationController
   def music_params
     params.require(:music).permit(:image, :name, :content, :genre1_id, :genre2_id, :genre3_id, :representative, :mail, :prefecture_id, :post_code, :city, :house_number, :building_name, :phone_number, :station, :walk, :hour, :holiday, :fee, :url, :remarks, genre_ids: []).merge(user_id: current_user.id)
   end
-
-  def search_music
-    @q = Music.ransack(params[:q])
-    @musics = @q.result(distinct: true)
+  
+  def search_params
+    params.require(:q).permit!
   end
+
+  # def search_music
+  #   @q = Music.ransack(params[:q])
+  #   # @p = Genre.ransack(params[:q])
+  #   @musics = @q.result(distinct: true)
+  #   # @genres = @p.result(distinct: true)
+  # end
 
   def set_product_column
-    @musics_genre1 = Music.select("genre").distinct
+    @musics_genre = Music.select("name").distinct
   end
- 
-
-  # def search_params
-  #   params.require(:q).permit(:genre1_id)
-  # end
 
   def move_to_index
     unless user_signed_in?

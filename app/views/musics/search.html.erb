@@ -5,6 +5,7 @@
     <br>
     <li>
       <%= link_to musics.name, room_path(musics.id) %>
+      <%= musics.genres.pluck(:name).join(" ") %>
     </li>
   <% end %>
 <% else %>

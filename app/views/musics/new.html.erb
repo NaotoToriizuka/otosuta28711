@@ -5,7 +5,7 @@
 
   <div class="musics-register-main">
     <h2 class="musics-register-title">教室の情報を入力</h2>
-    <%= form_with model: @music,url:musics_path, local: true do |f| %>
+    <%= form_with model: @music, url:musics_path, local: true do |f| %>
     
     <%# 教室画像 %>
     <div class="img-upload">
@@ -46,9 +46,7 @@
           ジャンル
           <span class="indispensable">必須(複数可)</span>
         </div>
-        <%= f.collection_check_boxes(:genre_ids, @genre, :id, :name, {} ,{class:"select-box", id:"genre"}) do |b| %>
-        <%= b.label { b.check_box + b.text } %>
-        <% end %>
+        <%= f.collection_check_boxes(:genre_ids, @genre, :id, :name, {} ,{class:"select-box", id:"genre"}) %>
       </div>
     <%# ジャンル %>
 
