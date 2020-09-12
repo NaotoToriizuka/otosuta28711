@@ -46,13 +46,7 @@
           ジャンル
           <span class="indispensable">必須(複数可)</span>
         </div>
-        <%= f.collection_select(:genre1_id, Genre1.all, :id, :name, {} ,{class:"select-box", id:"genre"}) %>
-      </div>
-      <div class="form">
-        <%= f.collection_select(:genre2_id, Genre2.all, :id, :name, {} ,{class:"select-box", id:"genre"}) %>
-      </div>
-      <div class="form">
-        <%= f.collection_select(:genre3_id, Genre3.all, :id, :name, {} ,{class:"select-box", id:"genre"}) %>
+        <%= f.collection_check_boxes(:genre_ids, @genre, :id, :name, {} ,{class:"select-box", id:"genre"}) %>
       </div>
     <%# ジャンル %>
 

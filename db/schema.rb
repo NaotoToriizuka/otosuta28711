@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_07_051737) do
+ActiveRecord::Schema.define(version: 2020_09_11_074013) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,13 +33,25 @@ ActiveRecord::Schema.define(version: 2020_09_07_051737) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "genres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "music_genres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "music_id"
+    t.bigint "genre_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["genre_id"], name: "index_music_genres_on_genre_id"
+    t.index ["music_id"], name: "index_music_genres_on_music_id"
+  end
+
   create_table "musics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "name", null: false
     t.text "content"
-    t.integer "genre1_id", null: false
-    t.integer "genre2_id"
-    t.integer "genre3_id"
     t.string "representative", null: false
     t.string "mail", null: false
     t.integer "prefecture_id", null: false
@@ -74,5 +86,7 @@ ActiveRecord::Schema.define(version: 2020_09_07_051737) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "music_genres", "genres"
+  add_foreign_key "music_genres", "musics"
   add_foreign_key "musics", "users"
 end
