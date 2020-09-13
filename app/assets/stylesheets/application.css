@@ -14,26 +14,24 @@
  *= require_self
  */
 
+ /* リセットCSS */
  * {
-   /* box-sizing: border-box: */
+    margin: 0;
+    padding: 0;
  }
+  /* リセットCSS */
+/* .container {
+  width: 100vw; */
 
-.container {
-  width: 100vw;
-}
 
-.title {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-.no-underline {
+
+/* .no-underline {
    text-decoration:none !important;
    color: black;
    font-size: 60px;
-  }
+  } */
   
-.nav{
+/* .nav{
   font-size: 18px;
   display: flex;
   justify-content: space-between;
@@ -85,4 +83,4 @@ text-decoration: none;
   padding: 0px 10px;
   color: white;
   border: none;
-} 
+}  */
