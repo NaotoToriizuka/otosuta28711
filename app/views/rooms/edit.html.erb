@@ -1,8 +1,5 @@
+<%= render "shared/header" %>
 <div class="musics-register-contents">
-  <header class="musics-register-header">
-    <%= link_to "OTOSUTA", "/" ,class:"no-underline"%>
-  </header>
-
   <div class="musics-register-main">
     <h2 class="musics-register-title">教室の情報を入力</h2>
     <%= form_with model: @music, local: true do |f| %>
