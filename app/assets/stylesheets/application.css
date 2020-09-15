@@ -13,15 +13,26 @@
  *= require_tree .
  *= require_self
  */
+ html {
+  height: 100%;
+ }
 
+ body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  }
  /* リセットCSS */
  * {
-    margin: 0;
-    padding: 0;
+   margin : 0;
+   padding: 0;
+  
  }
   /* リセットCSS */
 /* .container {
   width: 100vw; */
+
+  /* .container { position: relative; width: 100%; height: auto !important; height: 100%; min-height: 100%; } */
 
 
 

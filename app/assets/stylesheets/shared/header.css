@@ -1,13 +1,16 @@
 /* header */
-.navbar {
+header {
   position: fixed;
   width: 100%;
   border-bottom: solid 3px #3399CC;
 }
-.site {
-  margin-top: 40px;
-  margin-left: 5px;
 
+.navbar {
+}
+
+.site {
+  margin-top: 25px;
+  margin-left: 5px;
 }
 
 .navbar-nav {
