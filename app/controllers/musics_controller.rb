@@ -1,5 +1,5 @@
 class MusicsController < ApplicationController
-  before_action :move_to_index, except: [:index, :room, :seach]
+  before_action :move_to_index, except: [:index, :room, :search]
 
   def index
     @q = Music.ransack(params[:q])

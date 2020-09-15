@@ -17,11 +17,11 @@
   height: 100%;
  }
 
- body {
+ /* body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  }
+  } */
  /* リセットCSS */
  * {
    margin : 0;
