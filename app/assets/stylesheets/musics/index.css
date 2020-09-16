@@ -11,7 +11,7 @@
   padding-top: 200px;
   padding-bottom: 60px;
 
-  height: 90vh;
+  height: 100vh;
 }
 
 .main-title h2{
@@ -44,9 +44,17 @@
   justify-content: space-around;
   background-color:rgba(255,255,255,0.8);
   padding: 5px 8px;
-  margin: 20px 20px;
+  margin: 50px 20px;
   border: 1px solid #3399CC;
   color: #3399CC;
+}
+.name {
+padding-top: 1px;
+
+}
+
+ .prefecture {
+  padding-top: 1px;
 }
 
 .btn {
@@ -64,8 +72,29 @@
 .mx-auto {
   color: #3399CC;
   background-color:rgba(255,255,255,0.8);
-  display: block;
-  padding: 15px 33px;
+  margin: 20px;
+}
+
+.panel-heading {
+
+  border: 1px solid #3399CC;
+}
+
+
+.panel-title {
+  text-align: center;
+}
+
+.genre-btn {
+  color: white;
+  background-color:  #3399CC;
+  padding: 1px;
+  margin-top: 10px;
+  border: 1px solid rgb(116, 100, 100);
+}
+
+.panel-body {
+  padding: 20px;
   border: 1px solid #3399CC;
 }
 
