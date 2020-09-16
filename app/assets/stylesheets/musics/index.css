@@ -1,13 +1,16 @@
+
 .contents {
   flex: 1;
 }
 
 .header-img {
-  background-image: url("image001.jpg");
+  background-image: url("image001.jpg")!important;
   background-size: cover;
   background-attachment: fixed;
   object-fit: cover;
   padding-top: 200px;
+  padding-bottom: 60px;
+
   height: 90vh;
 }
 
@@ -29,7 +32,6 @@
 .no-underline {
   color: #3399CC;
   font-size: 50px;
-  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
   text-decoration:none !important;
 }
 

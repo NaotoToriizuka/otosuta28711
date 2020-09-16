@@ -1,10 +1,12 @@
+<%= stylesheet_link_tag "user/new", :media => "all" %>
+<%= stylesheet_link_tag "shared/header", :media => "all" %>
 <%= render "shared/header" %>
 
 <div class="contents row">
   <div class="container">
     <h2>新規登録</h2>
-<%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
- <%= devise_error_messages! %>
+    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+    <%= devise_error_messages! %>
   <div class=list>
     <ul class="list-group">
       <li class="list-group-item st bg-light">ニックネーム(最大6文字)</li>
@@ -22,8 +24,8 @@
   <div class='actions'>
       <%= f.submit "登録", class: 'btn'%>
   </div>
-<% end %>
-</div>
+    <% end %>
+  </div>
 </div>
 <%# <h2>Sign up</h2> %>
 

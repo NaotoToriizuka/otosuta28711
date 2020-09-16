@@ -1,8 +1,10 @@
 /* header */
 header {
-  position: fixed;
   width: 100%;
   border-bottom: solid 3px #3399CC;
+  position: fixed; top:0; left: 0;
+right: 0;
+z-index:10;
 }
 
 .navbar {
@@ -20,13 +22,10 @@ header {
 .nav-item{
   padding: 10px;
   border-radius: 25px;
-  color: black;
   background-color:#3399CC;
   margin-top: 1px;
   margin-bottom: 1px;
   margin-right: 40px;
-  text-align: center;
-  list-style-type: none;
 }
 
 .item {
@@ -40,7 +39,6 @@ header {
 .no-underline {
   color: #3399CC;
   font-size: 50px;
-  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
   text-decoration:none !important;
 }
 /* header */
