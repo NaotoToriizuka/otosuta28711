@@ -1,5 +1,5 @@
 class MusicsController < ApplicationController
-  before_action :move_to_index, except: [:index, :room, :search]
+  before_action :move_to_sign_in, except: [:index, :room, :search]
 
   def index
     @q = Music.ransack(params[:q])
@@ -59,7 +59,7 @@ class MusicsController < ApplicationController
     params.require(:q).permit!
   end
 
-  def move_to_index
+  def move_to_sign_in
     unless user_signed_in?
       redirect_to new_user_session_path
     end
