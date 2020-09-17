@@ -1,0 +1,82 @@
+.contents {
+  flex: 1;
+}
+
+.header-img {
+  background-image: url("image001.jpg")!important;
+  background-size: cover;
+  background-attachment: fixed;
+  object-fit: cover;
+  padding-top: 200px;
+  padding-bottom: 60px;
+  height: 100vh;
+}
+
+.main-title h2{
+  background-color:rgba(255,255,255,0.8);
+  width: 200px;
+  padding: 3px;
+  margin-left:auto;
+  margin-right:auto;
+  color: #3399CC;
+  text-align: center;
+  border: 1px solid #3399CC;
+  border-radius: 10px;
+} 
+
+.no-underline {
+  color: #3399CC;
+  font-size: 50px;
+  text-decoration:none !important;
+}
+
+.main-container {
+  margin: 30px 0px;
+}
+
+.mx-auto {
+  color: #3399CC;
+  background-color:rgba(255,255,255,0.8);
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid #3399CC;
+  align-items: center;
+  margin-top: 70px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+}
+
+.name {
+padding-top: 8px;
+
+}
+
+.prefecture {
+  padding-top: 8px;
+  /* margin-right: 100px; */
+}
+
+.btn {
+  color: white;
+  background-color:  #3399CC;
+  border: 1px solid white;
+  padding:  2px 10px;
+}
+
+.btn:hover {
+  color: white;
+}
+
+.genre-btn {
+  font-size: 20px;
+  color: white;
+  background-color:  #3399CC;
+  padding: 1px;
+  margin-top: 10px;
+  border: 1px solid white;
+  margin-right: 100px;
+}

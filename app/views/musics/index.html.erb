@@ -1,48 +1,49 @@
+<%= stylesheet_link_tag "musics/index", :media => "all" %>
+<%= stylesheet_link_tag "shared/header", :media => "all" %>
+<%= stylesheet_link_tag "shared/footer", :media => "all" %>
+
+
+
+<%= render "shared/header" %>
 <main>
-  <div class="container">
-    <div class="title">
-      <%= link_to "OTOSUTA", "/" ,class:"no-underline"%>
+<div class="contents">
+  <div class="header-img">
+    <div class="main-title">
+      <h2>音楽教室検索</h2>
     </div>
-    <div class="nav">
-    <% if user_signed_in? %>
-      <div class= "user_nav grid-6">
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        <%= link_to "登録する", new_music_path, class: "post" %>
-      </div>
-    <% else %>
-      <div class="grid-6">
-        <%= link_to "ログイン", new_user_session_path, class: "post" %>
-        <%= link_to "新規登録", new_user_registration_path, class: "post" %>
-      </div>
-    <% end %>
-    </div>
-    <div class="room-index">
-      <%= link_to "教室一覧", rooms_path, class: "lists" %>
-    </div>
-  </div>
-  
- 
-  <%= search_form_for @q, url: musics_search_path do |f| %>
-    <%= f.label :name_cont, "教室名" %>
-    <%= f.search_field :name_cont %>
-    <%= f.submit "検索" %>
-    <br>
-    <%= f.label :genres_id_in, '楽器' %>
-    <%= f.collection_check_boxes :genres_id_in, @genre, :id, :name %>
-    <br>
-    <%= f.label :prefecture_id_eq, '都道府県' %>
-    <%= f.collection_select :prefecture_id_eq, @prefecture, :id, :name, include_blank: '指定なし' %>
-    <br>
-    <%= f.submit '検索' %>
-    <br>
-  <% end %>
 
-
-  <div class="search-form">
-    <div class="form-input">
-      <input class="search" placeholder="キーワードから探す">
-    <input class="form-submit" type="submit" value="検索する">
+    <div class="main-container">
+      <%= search_form_for @q, url: musics_search_path do |f| %>
+        <div class="mx-auto" style="width: 60%;">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+                 <div class="name">
+                   <%= f.label :name_cont, "教室名" %>
+                   <%= f.search_field :name_cont %>
+                   <%= f.submit "検索", class:"btn"%>
+                 </div>
+                 <div class="prefecture">
+                   <%= f.label :prefecture_id_eq, '都道府県' %>
+                   <%= f.collection_select :prefecture_id_eq, @prefecture, :id, :name, include_blank: '指定なし' %>
+                   <%= f.submit '検索', class:"btn" %>
+                 </div>
+                 <div class="panel-title ">
+                  <div data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <%= f.label :genres_id_in, '楽器選択', class: "genre-btn" %>
+                  </div>
+                </div>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  <%= f.collection_check_boxes :genres_id_in, @genre, :id, :name %>
+                </div>
+              </div>
+            </div>
+          </div>   
+       <% end %>
     </div>
   </div>
 </div>
-</main>
+<main>
+<%= render "shared/footer" %>

@@ -1,0 +1,35 @@
+header {
+  width: 100%;
+  border-bottom: solid 3px #3399CC;
+  position: fixed; top:0; left: 0;
+  right: 0;
+  z-index:10;
+}
+
+.site {
+  margin-top: 25px;
+  margin-left: 5px;
+}
+
+.navbar-nav {
+  font-size: 20px;
+}
+
+.item {
+  color: white;
+  text-decoration:none !important;
+  background-color:#3399CC;
+  border-radius: 25px;
+  padding: 10px 20px;
+  margin-right: 40px;
+}
+
+.item:hover {
+  color: white;
+}
+
+.no-underline {
+  color: #3399CC;
+  font-size: 50px;
+  text-decoration:none !important;
+}
