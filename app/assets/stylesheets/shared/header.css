@@ -1,13 +1,9 @@
-/* header */
 header {
   width: 100%;
   border-bottom: solid 3px #3399CC;
   position: fixed; top:0; left: 0;
-right: 0;
-z-index:10;
-}
-
-.navbar {
+  right: 0;
+  z-index:10;
 }
 
 .site {
@@ -19,19 +15,15 @@ z-index:10;
   font-size: 20px;
 }
 
-.nav-item{
-  padding: 10px;
-  border-radius: 25px;
-  background-color:#3399CC;
-  margin-top: 1px;
-  margin-bottom: 1px;
-  margin-right: 40px;
-}
-
 .item {
   color: white;
   text-decoration:none !important;
+  background-color:#3399CC;
+  border-radius: 25px;
+  padding: 10px 20px;
+  margin-right: 40px;
 }
+
 .item:hover {
   color: white;
 }
@@ -41,4 +33,3 @@ z-index:10;
   font-size: 50px;
   text-decoration:none !important;
 }
-/* header */

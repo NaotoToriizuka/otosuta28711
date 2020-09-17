@@ -1,13 +1,12 @@
 .room-show {
   padding-top: 150px;
-  /* background-color: lime; */
+  padding-bottom: 100px;
 }
 
 .room-top{
   width: 80%;
   margin: 0 auto;
   max-width: 500px;
-  /* padding: 5px; */
 }
 
 .room-img-content{
@@ -21,8 +20,6 @@
 }
 .room-box-img {
   width: 100%;
-  /* width: 35vw;
-  height: auto; */
 }
 
 .room-content{
@@ -63,6 +60,3 @@
 .btn:hover {
   color: white;
 }
-
-
-

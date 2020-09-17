@@ -12,9 +12,9 @@
  *
  *= require_self
  */
- html {
+ /* html {
   height: 100%;
- }
+ } */
 
  /* body {
   min-height: 100vh;
@@ -22,75 +22,9 @@
   flex-direction: column;
   } */
  /* リセットCSS */
- * {
+ *{
    margin : 0;
    padding: 0;
    font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
  }
   /* リセットCSS */
-/* .container {
-  width: 100vw; */
-
-  /* .container { position: relative; width: 100%; height: auto !important; height: 100%; min-height: 100%; } */
-
-
-
-/* .no-underline {
-   text-decoration:none !important;
-   color: black;
-   font-size: 60px;
-  } */
-  
-/* .nav{
-  font-size: 18px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 1vh 0;
-}
-
-.user_nav  {
-  display: flex;
-  list-style: none;
-  align-items: flex-end;
-}
-
-li {
-text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
-  color: #333333;
-}
-
-
-
-
-
-.search-form {
-  text-align: center;
-  height: 90px;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: center;
-}
-
-.form-input {
-  width: 100%;
-}
-
-.search{
-  height: 30px;
-  width: 35%;
-  padding-left: 10px;
-}
-
-.form-submit {
-
-  background-color: red;
-  font-size: 16px;
-  height: 30px;
-  padding: 0px 10px;
-  color: white;
-  border: none;
-}  */

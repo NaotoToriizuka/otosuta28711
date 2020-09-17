@@ -10,7 +10,7 @@ class MusicsController < ApplicationController
 
   def search
     @q = Music.search(search_params)
-    @musics = @q.result(distinct: true)
+    @musics = @q.result(distinct: true).includes([:image_attachment])
   end
 
   def new

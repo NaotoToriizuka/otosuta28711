@@ -1,35 +1,19 @@
 main {
   padding-top:150px ;
+  padding-bottom: 100px;
 }
 
 h1 {
- text-align: center;
-
- margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
-
 
 .card {
   margin:0px auto;
 }
 
-
-
 .row {
   border: 1px solid#3399CC;
-
-}
-
-.col-md-4 {
- 
-}
-
-.bd-placeholder-img {
-
-}
-
-.col-md-4 {
-
 }
 
 .room-box-img {
@@ -47,5 +31,21 @@ h1 {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+}
 
+.btn-contents {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn {
+  margin-top: 10px;
+  color: white;
+  background-color:#3399CC;
+  padding: 10px 20px;
+  border-radius: 25px;
+}
+
+.btn:hover {
+  color: white;
 }

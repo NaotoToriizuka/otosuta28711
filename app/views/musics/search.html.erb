@@ -1,17 +1,46 @@
+<%= stylesheet_link_tag "musics/search", :media => "all" %>
+<%= stylesheet_link_tag "shared/header", :media => "all" %>
+<%= stylesheet_link_tag "shared/footer", :media => "all" %>
+
 <%= render "shared/header" %>
-<h1 class="searchs">
-検索結果</h1>
-<% if @musics.length !=0 %>
-  <% @musics.each do |musics| %>
-    <td>
-    <br>
-    <li>
-      <%= link_to musics.name, room_path(musics.id) %>
-      <%= musics.genres.pluck(:name).join(" ") %>
-    </li>
+
+<main>
+  <h1>教室検索</h1>
+  <% if @musics.length !=0 %>
+      <% @musics.each do |musics| %>
+      <div class="card mb-3" style="max-width: 45%;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <% if musics.image.present? %> 
+              <%= image_tag musics.image, class:"room-box-img",size:'220x220' %>
+            <% else %>
+              <%= image_tag "noimage.png", class:"room-box-no-img",size:'220x220' %>
+            <% end %> 
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to musics.name, room_path(musics.id) %></h5>
+              <p class="card-text"><small class="text-muted"><%= musics.prefecture.name %><%= musics.city %><%= musics.house_number %><%= musics.building_name %></small></p>
+              <p class="card-text"><%= musics.content %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <div class="container">
+      <div class="col-md-12">
+        <div class="btn-contents">
+          <%= link_to 'もどる', musics_path, class:"btn"%>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <h2>該当する教室はありません</h2>
+    <div class="btn-contents">
+      <%= link_to 'トップページへ戻る', root_path, class: "btn" %>
+    </div>
   <% end %>
-<% else %>
-  該当する教室はありません
-<% end %>
-<br>
-<%= link_to 'トップページへ戻る', root_path %>
+</main>
+
+
+<%= render "shared/footer" %>
