@@ -10,7 +10,7 @@
     <h2 class="musics-register-title">教室の情報を編集</h2>
     <div class="explanation">
       <div class="container ">
-        <%= form_with model: @music, url:musics_path, local: true do |f| %>
+        <%= form_with model: @music, local: true do |f| %>
         <div class="row">
           <div class="col bg-light">教室画像</div>
           <div class="col"><%= f.file_field :image, id:"item-image" %></div>
@@ -23,7 +23,7 @@
           <div class="col"><%= f.text_area :content, class:"musics-text", id:"music-info", placeholder:"教室の説明（必須 最大1,000文字まで）", rows:"7",maxlength:"1000"%></div>
           <div class="w-100"></div>
           <div class="col bg-light">ジャンル  <span class="indispensable">[必須](複数可)</span></div>
-          <div class="col-md-6 checkbox-list"><%= f.collection_check_boxes(:genre_ids, @genre, :id, :name, {} ,{class:"select-box", id:"genre"}) %></div>
+          <div class="col-md-6 checkbox-list"><%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name, {} ,{class:"select-box", id:"genre"}) %></div>
         </div>
         <div class="row">
           <div class="col bg-light">郵便番号  <span class="indispensable">[必須]</span></div>

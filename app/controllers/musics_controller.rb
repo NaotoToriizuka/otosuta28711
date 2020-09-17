@@ -15,7 +15,6 @@ class MusicsController < ApplicationController
 
   def new
     @music = Music.new
-    @genre = Genre.all
   end
   
   def create
