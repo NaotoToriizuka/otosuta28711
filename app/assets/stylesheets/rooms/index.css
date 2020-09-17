@@ -1,0 +1,51 @@
+main {
+  padding-top:150px ;
+}
+
+h1 {
+ text-align: center;
+
+ margin-bottom: 20px;
+}
+
+
+.card {
+  margin:0px auto;
+}
+
+
+
+.row {
+  border: 1px solid#3399CC;
+
+}
+
+.col-md-4 {
+ 
+}
+
+.bd-placeholder-img {
+
+}
+
+.col-md-4 {
+
+}
+
+.room-box-img {
+  color: blue;
+}
+
+.room-box-no-img {
+  color: blue;
+}
+
+.card-text {
+  /* width: 400px; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+
+}

@@ -1,10 +1,30 @@
+<%= stylesheet_link_tag "rooms/index", :media => "all" %>
+<%= stylesheet_link_tag "shared/header", :media => "all" %>
+<%= stylesheet_link_tag "shared/footer", :media => "all" %>
+
 <%= render "shared/header" %>
-<h1>教室一覧</h1>
-<% @musics.each do |music| %>
-  <li class="list">
-    <%= link_to music.name, room_path(music.id) %>
-    <%= music.prefecture.name %>
-  </li>
-<% end %>
+<main>
+  <h1>教室一覧</h1>
+  <% @musics.each do |music| %>
+  <div class="card mb-3" style="max-width: 45%;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <% if music.image.present? %> 
+          <%= image_tag music.image, class:"room-box-img",size:'220x220' %>
+        <% else %>
+          <%= image_tag "noimage.png", class:"room-box-no-img",size:'220x220' %>
+         <% end %> 
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to music.name, room_path(music.id) %></h5>
+          <p class="card-text"><small class="text-muted"><%= music.prefecture.name %><%= music.city %><%= music.house_number %><%= music.building_name %></small></p>
+          <p class="card-text"><%= music.content %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</main>
 
 <%= render "shared/footer" %>

@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   def index
-    @musics = Music.all
+    @musics = Music.all.includes([:image_attachment])
   end
 
   def show
