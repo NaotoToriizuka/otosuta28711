@@ -14,32 +14,31 @@
 
     <div class="main-container">
       <%= search_form_for @q, url: musics_search_path do |f| %>
-      <ul>
-        <li>
-         <div class="name">
-            <%= f.label :name_cont, "教室名" %>
-            <%= f.search_field :name_cont %>
-            <%= f.submit "検索", class:"btn"%>
-          </div>
-        </li>
-        <li >
-          <div class="prefecture">
-            <%= f.label :prefecture_id_eq, '都道府県' %>
-            <%= f.collection_select :prefecture_id_eq, @prefecture, :id, :name, include_blank: '指定なし' %>
-            <%= f.submit '検索', class:"btn" %>
-          </div>
-        </li>
-      </ul>
-        <div class="mx-auto" style="width: 68%;">
-         
+     
+        
+        
+        
+        
+        
+        <div class="mx-auto" style="width: 60%;">
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingOne">
-                <h5 class="panel-title ">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                 <div class="name">
+                   <%= f.label :name_cont, "教室名" %>
+                   <%= f.search_field :name_cont %>
+                   <%= f.submit "検索", class:"btn"%>
+                 </div>
+                 <div class="prefecture">
+                   <%= f.label :prefecture_id_eq, '都道府県' %>
+                   <%= f.collection_select :prefecture_id_eq, @prefecture, :id, :name, include_blank: '指定なし' %>
+                   <%= f.submit '検索', class:"btn" %>
+                 </div>
+                 <div class="panel-title ">
+                  <div data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <%= f.label :genres_id_in, '楽器選択', class: "genre-btn" %>
-                  </a>
-                </h5>
+                  </div>
+                </div>
               </div>
               <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
