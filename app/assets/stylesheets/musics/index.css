@@ -9,7 +9,7 @@
   object-fit: cover;
   padding-top: 200px;
   padding-bottom: 60px;
-  height: 90vh;
+  height: 100vh;
 }
 
 .main-title h2{
@@ -45,17 +45,19 @@
   border: 1px solid #3399CC;
   align-items: center;
   margin-top: 70px;
-  padding: 10px 0px;
-
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
 }
 
 .name {
 padding-top: 8px;
+
 }
 
 .prefecture {
   padding-top: 8px;
-  margin-right: 100px;
+  /* margin-right: 100px; */
 }
 
 .btn {
