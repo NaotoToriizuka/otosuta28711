@@ -9,8 +9,12 @@
     <%= devise_error_messages! %>
   <div class=list>
     <ul class="list-group">
-      <li class="list-group-item st bg-light">メールアドレス </li>
-      <li class="list-group-item st bg-light">パスワード</li>
+      <li class="list-group-item st bg-light">
+        <label for="user_email">メールアドレス</label>
+      </li>
+      <li class="list-group-item st bg-light">
+        <label for="user_password">パスワード(英数字6文字以上)</label>
+      </li>
     </ul>
     <ul class="list-group">
       <li class="list-group-item"><%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form" %></li>
@@ -18,7 +22,7 @@
     </ul>
   </div>
   <div class='actions'>
-      <%= f.submit "ログイン", class: 'btn'%>
+      <%= f.submit "ログイン", class: 'btn' %>
   </div>
     <% end %>
   </div>
