@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Users", type: :system do
+RSpec.describe "ユーザー新規登録", type: :system do
   before do
     @user = FactoryBot.build(:user)
     # driven_by(:rack_test)
@@ -51,6 +51,34 @@ RSpec.describe "Users", type: :system do
       }.to change { User.count }.by(0)
       # 新規登録ページへ戻されることを確認する
       expect(current_path).to eq "/users"
+    end
+  end
+end
+
+RSpec.describe "ログイン", type: :system do
+  before do
+    @user = FactoryBot.build(:user)
+  end
+  context 'ログインできるとき' do
+    it '保存されているユーザーの情報と合致すればログインができる' do
+      # トップページに移動する
+      # トップページにログインページへ遷移するボタンがあることを確認する
+      # ログインページへ遷移する
+      # 正しいユーザー情報を入力する
+      # ログインボタンを押す
+      # トップページへ遷移することを確認する
+      # ログアウトボタンが表示されていることを確認する
+      # サインアップページへ遷移するボタンやログインページへ遷移するボタンが表示されていないことを確認する
+    end
+  end
+  context 'ログインできないとき' do
+    it '保存されているユーザーの情報と合致しないとログインができない' do
+      # トップページに移動する
+      # トップページにログインページへ遷移するボタンがあることを確認する
+      # ログインページへ遷移する
+      # ユーザー情報を入力する
+      # ログインボタンを押す
+      # ログインページへ戻されることを確認する
     end
   end
 end
