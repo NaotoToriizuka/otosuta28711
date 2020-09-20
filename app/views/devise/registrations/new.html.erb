@@ -9,10 +9,13 @@
     <%= devise_error_messages! %>
   <div class=list>
     <ul class="list-group">
-      <li class="list-group-item st bg-light">ニックネーム(最大6文字)</li>
-      <li class="list-group-item st bg-light">メールアドレス </li>
-      <li class="list-group-item st bg-light">パスワード(英数字8文字以上)</li>
-      <li class="list-group-item st bg-light">パスワード確認</li>
+      <li class="list-group-item st bg-light"><label for="user_nickname">ニックネーム(最大6文字)</label></li>
+      <li class="list-group-item st bg-light">
+      <label for="user_email">メールアドレス</label></li>
+      <li class="list-group-item st bg-light">
+      <label for="user_password">パスワード(英数字6文字以上)</label></li>
+      <li class="list-group-item st bg-light">
+      <label for="user_password_confirmation">パスワード確認</label></li>
     </ul>
     <ul class="list-group">
       <li class="list-group-item"><%= f.text_field :nickname, autofocus: true ,class:"form" ,placeholder:"（例）OTO太郎"%></li>

@@ -11,70 +11,70 @@
       <div class="container ">
         <%= form_with model: @music, url:musics_path, local: true do |f| %>
         <div class="row">
-          <div class="col bg-light">教室画像</div>
+          <div class="col bg-light"><label for="item-image">教室画像</label></div>
           <div class="col"><%= f.file_field :image, id:"item-image" %></div>
           <div class="w-100"></div>
-          <div class="col bg-light">教室名  <span class="indispensable">[必須]</span></div>
+          <div class="col bg-light"><label for="music-name">教室名</label>  <span class="indispensable">[必須]</span></div>
           <div class="col"><%= f.text_area :name, class:"room-name", id:"music-name", placeholder:"教室名（必須 40文字まで）", maxlength:"40" %></div>
         </div>
         <div class="row">
-          <div class="col bg-light">教室の説明  <span class="indispensable">[必須]</span></div>
+          <div class="col bg-light"><label for="music-info">教室の説明</label><span class="indispensable">[必須]</span></div>
           <div class="col"><%= f.text_area :content, class:"musics-text", id:"music-info", placeholder:"教室の説明（必須 最大1,000文字まで）", rows:"7",maxlength:"1000"%></div>
           <div class="w-100"></div>
-          <div class="col bg-light">ジャンル  <span class="indispensable">[必須](複数可)</span></div>
-          <div class="col-md-6 checkbox-list"><%= f.collection_check_boxes(:genre_ids, @genre, :id, :name, {} ,{class:"select-box", id:"genre"}) %></div>
+          <div class="col bg-light">ジャンル<span class="indispensable">[必須]</span>(複数可)</div>
+          <div class="col-md-6 checkbox-list" value="1"><%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name, {} ,{class:"select-box", id:"genre"})%></div>
         </div>
         <div class="row">
-          <div class="col bg-light">郵便番号  <span class="indispensable">[必須]</span></div>
+          <div class="col bg-light"><label for="post-code">郵便番号</label><span class="indispensable">[必須]</span></div>
           <div class="col"><%= f.text_field :post_code, class:"input-default-post", id:"post-code", placeholder: "123-4567", maxlength:"8" %></div>
           <div class="w-100"></div>
-          <div class="col bg-light">都道府県  <span class="indispensable">[必須]</span></div>
+          <div class="col bg-light">都道府県<span class="indispensable">[必須]</span></div>
           <div class="col"><%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %></div>
         </div>
         <div class="row">
-          <div class="col bg-light">市町村  <span class="indispensable">[必須]</span></div>
+          <div class="col bg-light"><label for="city">市町村</label><span class="indispensable">[必須]</span></div>
           <div class="col"><%= f.text_field :city, class:"input-default", id:"city", placeholder:"横浜市緑区" %></div>
           <div class="w-100"></div>
-          <div class="col bg-light">番地  <span class="indispensable">[必須]</span></div>
+          <div class="col bg-light"><label for="house-number">番地 </label><span class="indispensable">[必須]</span></div>
           <div class="col"><%= f.text_field :house_number, class:"input-default", id:"house-number", placeholder:"青山1-1-1" %></div>
         </div>
         <div class="row">
-          <div class="col bg-light">建物名</div>
+          <div class="col bg-light"><label for="building-name">建物名</label></div>
           <div class="col"><%= f.text_field :building_name, class:"input-default", id:"building-name", placeholder:"OTOSUTAビル103" %></div>
           <div class="w-100"></div>
-          <div class="col bg-light">最寄り駅  <span class="indispensable">[必須]</span></div>
+          <div class="col bg-light"><label for="station">最寄り駅</label><span class="indispensable">[必須]</span></div>
           <div class="col"><%= f.text_field :station, class:"input-default", id:"station", placeholder:"JR横浜駅" %></div>
         </div>
         <div class="row">
-          <div class="col bg-light">駅徒歩(分)  <span class="indispensable">[必須]</span></div>
+          <div class="col bg-light"><label for="walk">駅徒歩(分)</label><span class="indispensable">[必須]</span></div>
           <div class="col"><%= f.text_field :walk, class:"input-default", id:"walk", placeholder:"10" %></div>
           <div class="w-100"></div>
-          <div class="col bg-light">電話番号  <span class="indispensable">[必須]</span></div>
-          <div class="col"><%= f.text_field :phone_number, class:"input-default-phone", id:"phone-number", placeholder:"09012345678", maxlength:"8" %></div>
+          <div class="col bg-light"><label for="phone-number">電話番号</label><span class="indispensable">[必須]</span></div>
+          <div class="col"><%= f.text_field :phone_number, class:"input-default-phone", id:"phone-number", placeholder:"09012345678", maxlength:"11" %></div>
         </div>
         <div class="row">
-          <div class="col bg-light">メールアドレス  <span class="indispensable">[必須]</span></div>
+          <div class="col bg-light"><label for="mail">メールアドレス</label><span class="indispensable">[必須]</span></div>
           <div class="col"><%= f.text_field :mail, class:"input-default", id:"mail", placeholder:"PC・携帯どちらでも可" %></div>
           <div class="w-100"></div>
-          <div class="col bg-light">担当者名  <span class="indispensable">[必須]</span></div>
+          <div class="col bg-light"><label for="representative">担当者名</label>  <span class="indispensable">[必須]</span></div>
           <div class="col"><%= f.text_field :representative, class:"input-default", id:"representative", placeholder:"otosuta太郎",maxlength:"20" %></div>
         </div>
         <div class="row">
-          <div class="col bg-light">営業時間  <span class="indispensable">[必須]</span></div>
+          <div class="col bg-light"><label for="hour">営業時間</label><span class="indispensable">[必須]</span></div>
           <div class="col"><%= f.text_field :hour, class:"input-default", id:"hour", placeholder:"12時00分〜21時00分" %></div>
           <div class="w-100"></div>
-          <div class="col bg-light">定休日</div>
+          <div class="col bg-light"><label for="holiday">定休日</label></div>
           <div class="col"><%= f.text_field :holiday, class:"input-default", id:"holiday", placeholder:"毎週火曜日" %></div>
         </div>
         <div class="row">
-          <div class="col bg-light">オフィシャルサイト</div>
+          <div class="col bg-light"><label for="url">オフィシャルサイト</label></div>
           <div class="col"><%= f.text_field :url, class:"input-default-url", id:"url", placeholder:"http://www.otosuta.jp/.com" %></div>
           <div class="w-100"></div>
-          <div class="col bg-light">授業料  <span class="indispensable">[必須]</span></div>
+          <div class="col bg-light"><label for="fee">授業料</label><span class="indispensable">[必須]</span></div>
           <div class="col"><%= f.text_area :fee, class:"musics-text", id:"fee", placeholder:"1レッスン/60分 5,000円", rows:"7",maxlength:"1000" %></div>
         </div>
         <div class="row">
-          <div class="col bg-light">備考</div>
+          <div class="col bg-light"><label for="remarks">備考</label></div>
           <div class="col"><%= f.text_area :remarks, class:"musics-text", id:"remarks", rows:"7",maxlength:"1000" %></div>
         </div>
 

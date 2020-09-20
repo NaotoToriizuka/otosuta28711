@@ -8,10 +8,8 @@ RSpec.describe Music, type: :model do
 
   describe '教室登録' do
     context '教室の情報が保存できるとき' do
-      it 'content、genre_id2、genre_id3、building_name、hour、holiday、url、remarks以外の値が存在すれば登録できる' do
+      it 'content、building_name、hour、holiday、url、remarks以外の値が存在すれば登録できる' do
         @music.content = nil
-        @music.genre_id2 = nil
-        @music.genre_id3 = nil
         @music.building_name = nil
         @music.hour = nil
         @music.holiday = nil
@@ -28,11 +26,12 @@ RSpec.describe Music, type: :model do
         @music.valid?
         expect(@music.errors.full_messages).to include("Name can't be blank")
       end
-      it 'genre_id1の値が0(選択してください)では保存できない' do
-        @music.genre_id1 = 0
-        @music.valid?
-        expect(@music.errors.full_messages).to include("Genre id1 Select")
-      end
+      # it 'genreテーブルのnameが選択しなければと保存できない' do
+      #   @genre.name = nil
+      #   @music.valid?
+      #   binding.pry
+      #   expect(@genre.errors.full_messages).to include("[]")
+      # end
       it 'post_codeが空では保存できない' do
         @music.post_code = nil
         @music.valid?
