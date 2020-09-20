@@ -8,7 +8,6 @@ RSpec.describe Genre, type: :model do
   describe '教室登録' do
     context '教室の情報が保存できるとき' do
       it 'genreが選択されていれば保存できる' do
-        binding.pry
         expect(@genre).to be_valid
       end
     end

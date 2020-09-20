@@ -14,7 +14,7 @@ class CreateMusics < ActiveRecord::Migration[6.0]
       t.string        :phone_number,    null: false
       t.string        :station,         null: false
       t.integer       :walk,            null: false
-      t.string        :hour
+      t.string        :hour,            null: false
       t.string        :holiday
       t.text          :fee,             null: false
       t.text          :url
