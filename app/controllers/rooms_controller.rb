@@ -2,7 +2,8 @@ class RoomsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @musics = Music.all.includes([:image_attachment]).order("prefecture_id ASC")
+    @musics = Music.with_attached_image.order("prefecture_id ASC")
+    # @musics = Music.all.includes([:image_attachment]).order("prefecture_id ASC")
   end
 
   def show

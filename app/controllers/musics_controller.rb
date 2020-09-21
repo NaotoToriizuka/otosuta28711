@@ -32,7 +32,7 @@ class MusicsController < ApplicationController
     @music.update(music_params)
     if @music.valid?
       @music.update(music_params)
-      redirect_to root_path
+      redirect_to "/rooms/#{@music.id}"
     else
       render template: "rooms/edit"
     end
