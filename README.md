@@ -172,3 +172,4 @@ has_many :musics, through: :music_genres
 belongs_to :music  
 belongs_to :genre
 
+
