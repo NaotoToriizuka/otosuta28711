@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 2020_09_11_074013) do
   end
 
   create_table "music_genres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "music_id"
-    t.bigint "genre_id"
+    t.bigint "music_id", null: false
+    t.bigint "genre_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["genre_id"], name: "index_music_genres_on_genre_id"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2020_09_11_074013) do
     t.string "phone_number", null: false
     t.string "station", null: false
     t.integer "walk", null: false
-    t.string "hour"
+    t.string "hour", null: false
     t.string "holiday"
     t.text "fee", null: false
     t.text "url"
