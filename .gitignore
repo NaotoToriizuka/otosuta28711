@@ -30,4 +30,7 @@
 yarn-debug.log*
 .yarn-integrity
 
+!/tmp/pid/.keep
+!/tmp/sockets/.keep
+
 
