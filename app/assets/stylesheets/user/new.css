@@ -130,12 +130,10 @@
 .list{
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-  
 }
 
 
-}
+
 .list-group2{
 
 }
@@ -148,6 +146,7 @@
 .st{
   padding:35px 30px;
 }
+
 .form {
   width: 15vw;
   padding:0 30px;
