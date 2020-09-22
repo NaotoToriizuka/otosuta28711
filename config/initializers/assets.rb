@@ -21,3 +21,5 @@ Rails.application.config.assets.precompile += %w( musics/new )
 Rails.application.config.assets.precompile += %w( rooms/edit )
 Rails.application.config.assets.precompile += %w( rooms/index )
 Rails.application.config.assets.precompile += %w( musics/search )
+Rails.application.config.assets.precompile += %w( musics/musics )
+

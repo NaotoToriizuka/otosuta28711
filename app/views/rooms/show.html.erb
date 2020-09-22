@@ -18,7 +18,7 @@
             <% if @music.image.present? %>
               <%= image_tag @music.image, class:"room-box-img", size:'350x350' %>
             <% else %>
-              <%= image_tag "noimage.png", class:"room-box-no-img", size:'350x350' %>
+              <%= image_tag asset_path("noimage.png"), class:"room-box-no-img", size:'350x350' %>
             <% end %> 
           </div>
           <div class="col-md-6">

@@ -2,16 +2,6 @@
   flex: 1;
 }
 
-.header-img {
-  background-image: url("image001.jpg")!important;
-  background-size: cover;
-  background-attachment: fixed;
-  object-fit: cover;
-  padding-top: 200px;
-  padding-bottom: 60px;
-  height: 100vh;
-}
-
 .main-title h2{
   background-color:rgba(255,255,255,0.8);
   width: 200px;
