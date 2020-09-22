@@ -8,16 +8,16 @@
   <h1>教室検索</h1>
   <% if @musics.length !=0 %>
       <% @musics.each do |musics| %>
-      <div class="card mb-3" style="max-width: 45%;">
+      <div class="card" style="max-width: 45%;">
         <div class="row no-gutters">
-          <div class="col-md-4">
+          <div class="col-md-6">
             <% if musics.image.present? %> 
               <%= image_tag musics.image, class:"room-box-img",size:'220x220' %>
             <% else %>
               <%= image_tag "noimage.png", class:"room-box-no-img",size:'220x220' %>
             <% end %> 
           </div>
-          <div class="col-md-8">
+          <div class="col-md-6">
             <div class="card-body">
               <h5 class="card-title"><%= link_to musics.name, room_path(musics.id) %></h5>
               <p class="card-text"><small class="text-muted"><%= musics.prefecture.name %><%= musics.city %><%= musics.house_number %><%= musics.building_name %></small></p>
