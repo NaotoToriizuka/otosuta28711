@@ -34,11 +34,12 @@ otosuta28711
  
 # URL
 
-デプロイ次第、記述する
+https://otosuta28711.herokuapp.com/
  
 # テスト用アカウント
  
-デプロイ次第、記述する
+テストID：test
+テストPASS：testtest1
 
 # 利用方法
 
